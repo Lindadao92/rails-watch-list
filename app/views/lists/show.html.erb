@@ -1,0 +1,12 @@
+<div class="container py-5">
+  <h1><%= @list.name %></h1>
+</div>
+
+<%# delete a movie %>
+<%# show movies %>
+<% @list.movies.each do |movie| %>
+  <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+  <%= movie.title %>
+  <%= movie.rating %>
+  <%= movie.overview %>
+<% end %>

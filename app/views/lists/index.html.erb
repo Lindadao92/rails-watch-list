@@ -1,0 +1,28 @@
+ <div class="cover py-5 mb-4 d-flex align-items-center justify-content-center">
+  <div class="text-center">
+    <h1>Save any kind of movies</h1>
+    <h3 class="typed-js"></h3>
+  </div>
+</div>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <%= link_to "Create a movie list", new_list_path, class: "btn btn-dark" %>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+  <div class="list">
+    <h1>My lists</h1>
+    <div class="list-items">
+      <div class="list-items">
+        <% @lists.each do |list| %>
+          <li><%= link_to list.name, list_path(list), class:'text-decoration-none' %></li>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
