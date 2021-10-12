@@ -6,9 +6,9 @@
 <div class="movie-description p-5">
 <% @list.movies.each do |movie| %>
     <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
-    <strong><%= movie.title %></strong>
-    <li>Rating: <%= movie.rating %></li>
-    <li>Description: <%= movie.overview %></li>
+    <h3><strong><%= movie.title %></strong></h3>
+    <li><strong>Rating</strong>: <%= movie.rating %></li>
+    <li><strong>Description</strong>: <%= movie.overview %></li>
     <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %>
     <br>
     <br>
