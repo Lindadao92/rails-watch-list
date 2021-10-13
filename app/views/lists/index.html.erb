@@ -15,7 +15,8 @@
         <% @lists.each do |list| %>
           <div class="card" style="width: 18rem;">
           <% if list.photo.attached? %>
-            <%= cl_image_tag list.photo.key, height: 200, width: 286 %>
+          <div style="height: 200px; width: 286px; background-position: center; background-image: url('<%= cl_image_path list.photo.key, width: 286, crop: :fill %>')">
+          </div>
             <% end %>
             <div class="card-body">
               <h5 class="card-title"><%= list.name %></h5>

@@ -19,7 +19,9 @@
           <div class="card" style="width: 18rem;">
             <div class="card-body">
               <% if bookmark.photo.attached? %>
-              <%= cl_image_tag bookmark.photo.key, height: 200, width: 244 %>
+                <div style="height: 200px; width: 244px; background-position: center; background-image: url('<%= cl_image_path bookmark.photo.key, width: 244, crop: :fill %>')"></div>
+
+             <!-- <%= cl_image_tag bookmark.photo.key, height: 200, width: 244 %> -->
               <% end %>
                 <h5 class="card-title pt-3"><%= bookmark.movie.title %></h5>
                 <p class="card-text"><strong>Rating:</strong> <%= bookmark.movie.rating %></p>
