@@ -1,29 +1,27 @@
- <div class="cover py-5 mb-4 d-flex align-items-center justify-content-center">
-  <div class="text-center">
-    <h1>Save any kind of movies</h1>
-    <h3 class="typed-js"></h3>
+<div class="banner justify-content-center">
+  <div class="header">
+    <h1>Welcome to my movie list 🎬 </h1>
+    <div class="col-md-12 text-center p-5">
+      <%= link_to "Create a movie list", new_list_path, class: "btn btn-dark" %>
+    </div>
   </div>
 </div>
 
-<div class="container py-5">
-    <div class="row">
-        <div class="col-md-12 text-right">
-            <%= link_to "Create a movie list", new_list_path, class: "btn btn-dark" %>
-        </div>
-    </div>
-</div>
 
 
-
-<div class="container">
+<div class="container col-md-12 text-center p-5">
   <div class="list">
     <h1>My lists</h1>
-    <div class="list-items">
-      <div class="list-items">
+    <div class="list-items p-5">
         <% @lists.each do |list| %>
-          <li><%= link_to list.name, list_path(list), class:'text-decoration-none' %></li>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1759&q=80" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><%= list.name %></h5>
+              <a href="#"><%= link_to "Go to list", list_path(list), class:'btn btn-primary' %></a>
+            </div>
+          </div>
         <% end %>
-      </div>
     </div>
   </div>
 </div>

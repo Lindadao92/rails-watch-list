@@ -3,12 +3,13 @@
 
 </div>
 
-<%# show movies %>
+<%# show movies tbrough bookmarks %>
 <div class="movie-description p-5">
 <% @list.bookmarks.each do |bookmark| %>
     <h3><strong><%= bookmark.movie.title %></strong></h3>
     <li><strong>Rating</strong>: <%= bookmark.movie.rating %></li>
     <li><strong>Description</strong>: <%= bookmark.movie.overview %></li>
+    <li><strong>Comment</strong>: <%= bookmark.comment %></li>
 
     <% if bookmark.photo.attached? %>
       <%= cl_image_tag bookmark.photo.key, height: 300, width: 400, crop: :fill %>
