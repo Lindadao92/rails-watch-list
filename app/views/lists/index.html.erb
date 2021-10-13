@@ -14,7 +14,9 @@
     <div class="list-items p-5">
         <% @lists.each do |list| %>
           <div class="card" style="width: 18rem;">
-            <%= cl_image_tag list.photo.key, height: 200, width: 286%>
+          <% if list.photo.attached? %>
+            <%= cl_image_tag list.photo.key, height: 200, width: 286 %>
+            <% end %>
             <div class="card-body">
               <h5 class="card-title"><%= list.name %></h5>
               <a href="#"><%= link_to "Go to list", list_path(list), class:'btn btn-primary' %></a>
