@@ -8,14 +8,13 @@
 </div>
 
 
-
 <div class="container col-md-12 text-center p-5">
   <div class="list">
-    <h1>My lists</h1>
+    <h1>Categories 🍿</h1>
     <div class="list-items p-5">
         <% @lists.each do |list| %>
           <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1759&q=80" alt="Card image cap">
+            <%= cl_image_tag list.photo.key, height: 200, width: 286%>
             <div class="card-body">
               <h5 class="card-title"><%= list.name %></h5>
               <a href="#"><%= link_to "Go to list", list_path(list), class:'btn btn-primary' %></a>
